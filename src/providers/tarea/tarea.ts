@@ -26,6 +26,9 @@ export class TareaProvider {
     this.archivadas.push(this.tareas[indice]);
     this.tareas.splice(indice,1);
   }
+  eliminarTarea(indice){
+    this.archivadas.splice(indice,1);
+  }
   editarTarea(indice,texto){
     this.tareas[indice] = texto;
   }

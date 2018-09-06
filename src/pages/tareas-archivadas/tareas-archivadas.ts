@@ -19,7 +19,9 @@ export class TareasArchivadasPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private tarea_serv:TareaProvider) {
     this.archivadas = tarea_serv.obtenerArchivadas();
   }
-
+  eliminarTarea(i){
+    this.tarea_serv.eliminarTarea(i);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad TareasArchivadasPage');
     this.archivadas = this.tarea_serv.obtenerArchivadas();

@@ -13,7 +13,7 @@
               {{tarea_arch}} ref:{{tareaIndex}}
           </ion-item>
           <ion-item-options side="right">
-            <button color="danger" ion-button>
+            <button color="danger" ion-button (click)="eliminarTarea(tareaIndex)">
               <ion-icon name="trash"></ion-icon>
             </button>
           </ion-item-options>
