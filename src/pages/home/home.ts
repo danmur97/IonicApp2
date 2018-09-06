@@ -8,8 +8,12 @@ import { TareaProvider } from '../../providers/tarea/tarea';
 })
 export class HomePage {
   tareas = [];
+  ordenHabilitado = false;
   constructor(public navCtrl: NavController, private alerta:AlertController,private tarea_serv:TareaProvider) {
     this.tareas = tarea_serv.obtenerTareas();
+  }
+  toogleOrdenHabilitado(){
+    this.ordenHabilitado = !this.ordenHabilitado;
   }
   agregarTarea(){
     let alert = this.alerta.create({
