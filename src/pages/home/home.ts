@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { NavController,AlertController } from 'ionic-angular';
+import { NavController,AlertController, reorderArray } from 'ionic-angular';
 import { TareaProvider } from '../../providers/tarea/tarea';
+
 
 @Component({
   selector: 'page-home',
@@ -14,6 +15,9 @@ export class HomePage {
   }
   toogleOrdenHabilitado(){
     this.ordenHabilitado = !this.ordenHabilitado;
+  }
+  ordenarLista(evento){
+    reorderArray(this.tareas,evento);
   }
   agregarTarea(){
     let alert = this.alerta.create({
@@ -30,5 +34,8 @@ export class HomePage {
       ]
     });
     alert.present();
+  }
+  archivarTarea(indice){
+    this.tarea_serv.archivarTarea(indice);
   }
 }
