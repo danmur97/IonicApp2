@@ -37,7 +37,7 @@ export class HomePage {
     alert.present();
   }
   editarTarea(indice){
-    let alert2 = this.alerta.create({
+    let alert = this.alerta.create({
       title: "Editar tarea",
       inputs:[{name: "tarea_txt",type: "text",value: this.tareas[indice]}],
       buttons:[
@@ -49,7 +49,7 @@ export class HomePage {
         }
       ]
     });
-    alert2.present();
+    alert.present();
   }
   archivarTarea(indice){
     this.tarea_serv.archivarTarea(indice);
