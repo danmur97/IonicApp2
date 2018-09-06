@@ -19,7 +19,7 @@
   <ion-list [reorder]="ordenHabilitado" (ionItemReorder)="ordenarLista($event)">
     <ion-item-sliding *ngFor="let tarea of tareas;let tareaIndex=index">
         <ion-item-options side="left">
-            <button ion-button>
+            <button ion-button (click)="editarTarea(tareaIndex)">
               <ion-icon name="create"></ion-icon>
             </button>
         </ion-item-options>  
